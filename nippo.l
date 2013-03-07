@@ -79,7 +79,7 @@
 		   (> (length current-line) 0))
 
 	; 空行が来る前にファイルが終わったらエラー
-	(if (null (forward-line)) (return-from nipp-add-header)))
+	(if (null (forward-line)) (return-from nippo-add-header)))
 
   ; ヘッダが終了したら、空行の前に文字列を入れる
   (insert header-string))
