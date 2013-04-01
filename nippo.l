@@ -263,8 +263,9 @@
     (setq *nippo-template-filepath*
           (merge-pathnames *nippo-template-filename* nippo-category-dir)))
 
-  ; 新しいフレームを作って名前を付ける
-  (new-pseudo-frame *nippo-pframe-name*)
+  ; なければ新しいフレームを作って名前を付ける
+  (or (find-pseudo-frame *nippo-pframe-name*)
+      (new-pseudo-frame *nippo-pframe-name*))
 
   ; 直前に書いたファイルを読み込む
   (find-file *nippo-recent-filepath*)
