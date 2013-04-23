@@ -11,7 +11,7 @@
 
 ; TODO: 作る変数
 ; *nippo-replace-alist*
-(defvar *nippo-mode-version* "0.2.0" "バージョン")
+(defvar *nippo-mode-version* "0.2.1" "バージョン")
 (defvar *nippo-mode-name* "nippo" "このモードの名前")
 (defvar *nippo-pframe-name* *nippo-mode-name* "フレームの名前")
 
