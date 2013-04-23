@@ -11,7 +11,7 @@
 
 ; TODO: 作る変数
 ; *nippo-replace-alist*
-(defvar *nippo-mode-version* "0.2.0" "バージョン")
+(defvar *nippo-mode-version* "0.2.1" "バージョン")
 (defvar *nippo-mode-name* "nippo" "このモードの名前")
 (defvar *nippo-pframe-name* *nippo-mode-name* "フレームの名前")
 
@@ -263,8 +263,9 @@
     (setq *nippo-template-filepath*
           (merge-pathnames *nippo-template-filename* nippo-category-dir)))
 
-  ; 新しいフレームを作って名前を付ける
-  (new-pseudo-frame *nippo-pframe-name*)
+  ; なければ新しいフレームを作って名前を付ける
+  (or (find-pseudo-frame *nippo-pframe-name*)
+      (new-pseudo-frame *nippo-pframe-name*))
 
   ; 直前に書いたファイルを読み込む
   (find-file *nippo-recent-filepath*)
